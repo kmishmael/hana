@@ -1,0 +1,19 @@
+.carousel-inner img{
+    width: 100%;
+    height: 100vh;
+    filter: brightness(20%);
+}
+.carousel-caption, .carousel-indicators{
+    position: absolute;
+    z-index: 1;
+    }
+.platform{
+    height: 80vh;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgb(26, 24, 24);
+    position: absolute;
+}
+body{
+    display: none;
+}
