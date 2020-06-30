@@ -1,23 +1,26 @@
 from django.db import models
 # Create your models here.
+
 PLATFORMS = (
-    ("s","Spotify"),
-    ("f","Facebook"),
-    ("t","twitter"),
-    ("i","Github"),
-    ("g","Google"),
-    ("ig","instagram"),
-    ("w","windows"),
-    ("o","worpress"),
-    ("y","youtube"),
-    ("w","whatsapp"),
+    ("Spotify","Spotify"),
+    ("Facebook","Facebook"),
+    ("Twitter","Twitter"),
+    ("Github","Github"),
+    ("Google","Google"),
+    ("Instagram","Instagram"),
+    ("Microsoft","Microsoft"),
+    ("Wordpress","Wordpress"),
+    ("Yputube","Youtube"),
+    ("Whatsapp","Whatsapp"),
 )
-class Name(models.Model):
-    type = models.CharField(verbose_name='Platform', choices=PLATFORMS,max_length=30)
-    email = models.EmailField(verbose_name='Email', max_length=50, default='kmishmael@gmail.com')
-    name = models.CharField(verbose_name='Name', max_length=50, default=None)
-    username = models.CharField(verbose_name='Username',max_length=30)
-    password = models.CharField(max_length=30, verbose_name='Password')
+class Platforms(models.Model):
+    s_name = models.CharField(max_length=30,verbose_name='Platform',choices=PLATFORMS)
+    p_username = models.CharField(max_length=30,verbose_name='Username')
+    p_email = models.EmailField(max_length=30,verbose_name='Email')
+    p_name = models.CharField(max_length=30,verbose_name='Name')
+    p_password = models.CharField(max_length=30,verbose_name='Password')
+    f_class = models.CharField(max_length=30,verbose_name='Icon')
     
     def __str__(self):
-        return self.type
+        return self.s_name
+    

@@ -1,10 +1,9 @@
 from django.contrib import admin
-from social.models import Name
+from social.models import Platforms
 # Register your models here.
 
-admin.register(Name)
+admin.register(Platforms)
 
-class NameAdmin(admin.ModelAdmin):
-    list_display = ('type','email','password',)
-
-admin.site.register(Name, NameAdmin)
+class PlatformsAdmin(admin.ModelAdmin):
+    list_display = ('s_name','p_email','p_password',)
+    
