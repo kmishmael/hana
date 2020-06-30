@@ -6,4 +6,5 @@ admin.register(Platforms)
 
 class PlatformsAdmin(admin.ModelAdmin):
     list_display = ('s_name','p_email','p_password',)
-    
+
+admin.register(PlatformsAdmin)
