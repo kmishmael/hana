@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 PLATFORMS = (
@@ -15,6 +16,7 @@ PLATFORMS = (
 )
 
 class Platforms(models.Model):
+    id = models.AutoField(primary_key=True)
     s_name = models.CharField(max_length=30,verbose_name='Platform',choices=PLATFORMS)
     p_username = models.CharField(max_length=30,verbose_name='Username')
     p_email = models.EmailField(max_length=30,verbose_name='Email')
@@ -24,3 +26,7 @@ class Platforms(models.Model):
     
     def __str__(self):
         return self.s_name
+    
+    def get_absolute_url(self):
+        return reverse('platform-detail', args=[str(self.id)])
+        
