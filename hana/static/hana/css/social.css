@@ -1,0 +1,106 @@
+.carousel-inner img{
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(20%);
+}
+.carousel-inner{
+    text-align: center;
+}
+.carousel-caption, .carousel-indicators{
+    position: absolute;
+    z-index: 1;
+    }
+.platform{
+    height: 90%;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgb(26, 24, 24);
+    position: absolute;
+    z-index: 10;
+    display: inline-block;
+    left: 37%;
+    top: 5%;
+}
+.mainp{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    text-align: center;
+}
+.fa-times{
+    vertical-align: top;
+}
+.p-platop{
+    float: center;
+}
+.p-cancel{
+    float: right;
+    position: absolute;
+    top: 2px;
+    right: 7px;
+    z-index: 20;
+}
+.p-cancel i{
+    color: white;
+}
+.p-cancel i:hover{
+    color: #1ED760;
+}
+.p-title{
+    text-align: center;
+}
+.plat{
+    font-size: 30px;
+    color: #1ED760;
+}
+.have{
+    color: white;
+    font-size: 18px;
+}
+
+.p-email, .p-name, .p-password, .p-username {
+    width: 400px;
+    margin-top: 20px;
+    text-align: left;
+    text-indent: 30px;
+}
+.p-email p, .p-name p, .p-password p, .p-username p{
+    color: white;
+    font-size: 17px;
+    display: inline-block;
+}
+.header-c{
+    position: absolute;
+    z-index: 10;
+}
+.header-t{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    transition: ease-in;
+    transition-duration: 0.5s;
+}
+#social{
+    float: right;
+    position: absolute;
+    margin-left: 85vw;
+    margin-top: 10px;
+}
+#home{
+    margin-left: 40px;
+    position: fixed;
+    margin-top: 10px;
+}
+.text-center{
+    display: inline-block;
+    margin-top: 60vh;
+    width: 93vw;
+    text-align: center;
+    display: none;
+}
+.text-center ul li{
+    margin-right: 5px;
+    display: inline;
+}

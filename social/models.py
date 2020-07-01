@@ -10,7 +10,7 @@ PLATFORMS = (
     ("Instagram","Instagram"),
     ("Microsoft","Microsoft"),
     ("Wordpress","Wordpress"),
-    ("Yputube","Youtube"),
+    ("Youtube","Youtube"),
     ("Whatsapp","Whatsapp"),
 )
 
