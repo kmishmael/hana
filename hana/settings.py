@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social.apps.SocialConfig',
+    'myjournal.apps.MyjournalConfig',
+    'videos.apps.VideosConfig',
+    'photos.apps.PhotosConfig',
+    'documents.apps.DocumentsConfig',
+    'schedule.apps.ScheduleConfig',
 ]
 
 MIDDLEWARE = [
