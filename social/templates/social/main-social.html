@@ -1,0 +1,113 @@
+{% extends 'social/social.html' %}
+{% block title %}
+Main | Social Platfroms
+{% endblock title %}
+{% block mainsocial %}
+<div class="icons">
+       {% if platforms %}
+          <ul>
+            {% for platform in platforms %}
+
+            <li><a href="{% url 'platform_detail' platform.pk %}"><i class="fa {{ platform.f_class }} fa-3x"></i></a><li>  
+            
+            {% endfor %}
+          </ul>
+           {% else %}
+           <p>There are no platforms yet</p>
+           {% endif %}
+</div>
+<style>
+.icons{
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    text-align: center;
+}
+
+.icons ul li {
+    margin-right: 10px;
+    display: inline;
+    
+}
+</style>
+{% endblock mainsocial %}
+
+{% block profile %}
+
+<i class="fa fa-ellipsis-v fa-2x roll" id="btn"></i>
+      <div class="pop-out">
+        <input type="checkbox" id="check" value="cheki" unchecked>
+        <label for="check">
+            <i class="fa fa-times fa-2x" id="cancel"></i>
+        </label>
+          <div class="profile">
+              <img class="profile-image" src = "https://lh3.googleusercontent.com/-Ibjuo3RZbeE/XntyjqtgINI/AAAAAAAAApw/LDHrXGRhVP48l8UEYnTFDg9_jV7-p1kmgCEwYBhgLKtQDAL1OcqyX_T6Z5rnn-rk2cKYi2B1LqymfKeoeRKvYQaDi1XJPV9l1oN3bE_1N_AKoPKxeJDKELHHDac1_jIa46EWFjHVZaGOh8ELUalxz6Q5TZ165XSUtviW5Rh1P6oS9fbfGhZcLIyIN8YSc9EhvjQmBWDbZUjsobqBNX04FrGFRRRLGP-oQ4tHS6jVTyzVmq_WJbbsaj-KL3x_-UXBf56qNSBPw179Dn7We4-cvzzkgX2PX0TDijnUjCV0ln3y7a9SJaetSJ5cZuK_EQW6rLgUNt1jOpmzUjRk853te5wEI7x1p23l56JZHwxza2Xi1HhUhMzpSrb_sKbRtI-W02pve44s5vFyCgIsAe2TAc_2kQpUgeHQFCXUXg7DEJ43aLg-uTpT9ES-Gr1oGapmVip0qo8fr-DFcQImTCWQgDFt3qh7XMoZw9lOTN6e6A-2REKIEXYCtououqpd4sXOLeEJ99ZxS5tt5cAMKRyOnA8R08BLQbeXSAdJEA0M5TTUzGXV13UyHwT7VGVnZBDuJ-lGJiNojlkWtJZUGXmpAfVg13Kn8kD4PaEpOsl7nRjxTYuwMTVqj90vnm1VhfKF_QqE-8-E4OAp5QsmVwpQFZCKsZDVRMMiU_PcF/w139-h140-p/IMG_20200118_164003.jpg">
+               <style>
+                   .profile-image{
+                       border-radius: 50%;
+                   }
+                   .pop-out{
+                       height: 300px !important;
+                   }
+                   </style>
+          </div>
+          <div class="pop-out-email">
+              <p>kmishmael@gmail.com</p>
+          </div>
+          <div class="pop-out-date">
+              <p class="date" id="dt">  
+              </p>
+              <p class="time" id="td">
+              
+              </p>
+              <script>
+              var d = new Date();
+
+              var month = d.getMonth()+1;
+              var day = d.getDate();
+
+              var date = d.getFullYear() + '/' + (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day;
+              
+              document.getElementById("dt").innerHTML = date;
+              
+              function ctime(){
+                var time = d.getHours() + ':' + d.getMinutes();
+                document.getElementById("td").innerHTML = time;
+
+              }
+              setInterval(ctime, 1000);
+
+              </script>
+          </div>
+          <div class="pop-logout">
+              <a>Logout</a>
+          </div>
+      </div>
+{% endblock profile %}
+{% block home %}
+<div class="home-btn">
+    <a href="{% url 'home' %}" class="home-txt">Home</a>
+</div>
+<style>
+    .home-btn{
+        position: absolute;
+        top: 16px;
+        border: 2px solid white;
+        left: 25px;
+        height: 45px;
+        width: 90px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .home-txt{
+        vertical-align: middle;
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    .home-txt:hover{
+        color: yellowgreen;
+    }
+</style>
+{% endblock home %}

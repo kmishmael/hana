@@ -46,23 +46,7 @@ a{
 #middle *{
     display: block;
 }
-#social-icons{
-    position: absolute;
-    z-index: 1;
-    width: 94%;
-    /*border: 1px solid white;*/
-    margin-top: 30%;
-    text-align: center;
 
-}
-#social-icons ul li{
-    margin-right: 10px;
-    display: inline-block;
-}
-#social-icons ul li a{
-    color: white;
-    float: center;
-}
 .fa-facebook{
   color: #3b5998;
   
@@ -102,13 +86,11 @@ a{
     border-radius: 50%;
 }
 .fa-whatsapp{
-    color:#fff;
-    background:
-    linear-gradient(#25d366,#25d366)10px 84%/10px 15px no-repeat,
-    radial-gradient(#25d366 60%,transparent 0);
+    color:#fff linear-gradient(#25d366,#25d366)10px 84%/10px 15px no-repeat, radial-gradient(#25d366 60%,transparent 0);
 }
 .fa-github{
     color: #000000;
+    background-color: white;
 }
 .pop-out{
     position: absolute;
@@ -128,6 +110,7 @@ a{
 }
 .profile-image{
     justify-self: center;
+
 }
 .pop-out-name{
     text-align: center;

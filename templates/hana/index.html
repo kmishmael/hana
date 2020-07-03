@@ -58,31 +58,25 @@
 
       <!----------------Social icons---------------->
       <div class="text-center white-text mx-5 wow fadeIn" id="social-icons">
-       {% if platforms_list %}
+       {% if platforms %}
           <ul>
-            {% for platform in Platforms %}
+            {% for platform in platforms %}
 
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="platform.f_class"></i></a><li>
-           
-            <!--<li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-whatsapp fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-google fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-facebook fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-twitter fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-instagram fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-spotify fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-windows fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-youtube-play fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-github fa-3x"></i></a></li>
-            <li><a href="{% url 'platforms.get_absolute_url' %}"><i class="fa fa-wordpress fa-3x"></i></a></li>
-            -->
+            <li><a href="{% url 'platform_detail' platform.pk %}"><i class="fa {{ platform.f_class }} fa-3x"></i></a><li>  
             
-            
-            {% end for %}
+            {% endfor %}
           </ul>
            {% else %}
            <p>There are no platforms yet</p>
            {% endif %}
+
+         
       </div>
+      <style>
+          .pop-n{
+              display: none;
+          }
+      </style>
       <i class="fa fa-ellipsis-v fa-2x roll" id="btn"></i>
       <div class="pop-out">
         <input type="checkbox" id="check" value="cheki" unchecked>
@@ -90,7 +84,15 @@
             <i class="fa fa-times fa-2x" id="cancel"></i>
         </label>
           <div class="profile">
-              <img class="profile-image" src="https://img.icons8.com/material-rounded/96/000000/user-male-circle.png">
+              <img class="profile-image" src = "https://lh3.googleusercontent.com/-Ibjuo3RZbeE/XntyjqtgINI/AAAAAAAAApw/LDHrXGRhVP48l8UEYnTFDg9_jV7-p1kmgCEwYBhgLKtQDAL1OcqyX_T6Z5rnn-rk2cKYi2B1LqymfKeoeRKvYQaDi1XJPV9l1oN3bE_1N_AKoPKxeJDKELHHDac1_jIa46EWFjHVZaGOh8ELUalxz6Q5TZ165XSUtviW5Rh1P6oS9fbfGhZcLIyIN8YSc9EhvjQmBWDbZUjsobqBNX04FrGFRRRLGP-oQ4tHS6jVTyzVmq_WJbbsaj-KL3x_-UXBf56qNSBPw179Dn7We4-cvzzkgX2PX0TDijnUjCV0ln3y7a9SJaetSJ5cZuK_EQW6rLgUNt1jOpmzUjRk853te5wEI7x1p23l56JZHwxza2Xi1HhUhMzpSrb_sKbRtI-W02pve44s5vFyCgIsAe2TAc_2kQpUgeHQFCXUXg7DEJ43aLg-uTpT9ES-Gr1oGapmVip0qo8fr-DFcQImTCWQgDFt3qh7XMoZw9lOTN6e6A-2REKIEXYCtououqpd4sXOLeEJ99ZxS5tt5cAMKRyOnA8R08BLQbeXSAdJEA0M5TTUzGXV13UyHwT7VGVnZBDuJ-lGJiNojlkWtJZUGXmpAfVg13Kn8kD4PaEpOsl7nRjxTYuwMTVqj90vnm1VhfKF_QqE-8-E4OAp5QsmVwpQFZCKsZDVRMMiU_PcF/w139-h140-p/IMG_20200118_164003.jpg">
+               <style>
+                   .profile-image{
+                       border-radius: 50%;
+                   }
+                   .pop-out{
+                       height: 300px !important;
+                   }
+                   </style>
           </div>
           <div class="pop-out-email">
               <p>kmishmael@gmail.com</p>
@@ -112,11 +114,11 @@
               document.getElementById("dt").innerHTML = date;
               
               function ctime(){
-                var time = d.getHours() + ':' + d.getMinutes();
+                var time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
                 document.getElementById("td").innerHTML = time;
 
               }
-              setInterval(ctime, 1000);
+              setInterval(ctime, 100);
 
               </script>
           </div>
@@ -124,11 +126,6 @@
               <a>Logout</a>
           </div>
       </div>
-      <div class="menu-icon">
-         <i class=" fa fa-bars fa-2x"></i>
-      </div>
-      <div class="b-pop-menu">
-     </div>
 <!----------------------------------Script-------------------->
     <!-------------------------Carousel--------------------------->
 

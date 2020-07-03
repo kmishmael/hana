@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from hana import views
+from social import views as sview
+from social.views import PlatformsListView, PlatformsDetailView, SocialListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='redirect'),
-    path('home/', views.home, name='home'),
+    #path('home/', views.home, name='home'),
+    path('home/', sview.PlatformsListView.as_view(), name='home'),
+    path('social/', sview.SocialListView.as_view(), name='main-social'),
+    path('social/<int:pk>/', sview.PlatformsDetailView.as_view(), name='platform_detail'),
 ]

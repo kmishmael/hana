@@ -1,0 +1,50 @@
+{% extends 'social/social.html' %}
+
+{% block title %}
+   {{platforms.s_name}} | Social platform
+{% endblock title %}
+   {{platforms.s_name}} |
+{% block content %}
+
+
+        <div class="platform">
+         
+           <div class="p-top">
+               <div class="p-platop">
+                    <i class="fa {{ platforms.f_class }} fa-4x"></i>
+               </div>
+               <div class="p-cancel">
+                   <a href="{% url 'main-social' %}">
+                    <i class="fa fa-times" id="canc"></i>
+                    <a>
+                </div>
+           </div>
+           <div class="p-title">
+               <p class="plat {{ platforms.f_class }}-s">
+                {{ platforms.s_name }}
+               </p>
+               <p class="have">
+                   You have one account
+               </p>
+           </div>
+           <div class="p-content">
+               <div class="p-email">
+                   <p class="align-p">Email:</p>
+                   <p>{{ platforms.p_email }}</p>
+               </div>
+               <div class="p-name">
+                <p class="align-p">Name:</p>
+                <p>{{ platforms.p_name }}</p>
+               </div>
+               <div class="p-username">
+                <p class="align-p">Username:</p>
+                <p>{{ platforms.p_username }}</p>
+               </div>
+               <div class="p-password">
+                <p class="align-p">Password:</p>
+                <p>{{ platforms.p_password }}</p>
+               </div>
+           </div>
+        </div> 
+{% endblock content %}
+ 
