@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from hana import views
 from social import views as sview
 from social.views import PlatformsListView, PlatformsDetailView, SocialListView
+from photos import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,8 @@ urlpatterns = [
     path('home/', sview.PlatformsListView.as_view(), name='home'),
     path('social/', sview.SocialListView.as_view(), name='main-social'),
     path('social/<int:pk>/', sview.PlatformsDetailView.as_view(), name='platform_detail'),
+    path('journals', include('myjournal.urls')),
+    path('photos/', include('photos.urls')),
+    path('videos', include('videos.urls')),
+    path('documents', include('documents.urls')),
 ]
