@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from hana import views
 from social import views as sview
 from social.views import PlatformsListView, PlatformsDetailView, SocialListView
 from photos import urls
+
+from django.conf import settings
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,8 +31,16 @@ urlpatterns = [
     path('home/', sview.PlatformsListView.as_view(), name='home'),
     path('social/', sview.SocialListView.as_view(), name='main-social'),
     path('social/<int:pk>/', sview.PlatformsDetailView.as_view(), name='platform_detail'),
-    path('journals', include('myjournal.urls')),
+    path('journals/', include('myjournal.urls')),
     path('photos/', include('photos.urls')),
-    path('videos', include('videos.urls')),
-    path('documents', include('documents.urls')),
+    path('videos/', include('videos.urls')),
+    path('documents/', include('documents.urls')),
+    path('schedule/', include('schedule.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        })
+    ]

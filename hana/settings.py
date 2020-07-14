@@ -27,9 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+THUMBNAIL_DEBUG = True
 # Application definition
-
+#THUMBNAIL_PREFIX = 'cache/'
+#THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.cached_db_kvstore.KVStore'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -73,6 +74,13 @@ TEMPLATES = [
         },
     },
 ]
+CACHES ={
+    'default': {
+        'BACKEND':
+            'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211'
+    }
+}
 
 WSGI_APPLICATION = 'hana.wsgi.application'
 
@@ -128,3 +136,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'hana/static/'),]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

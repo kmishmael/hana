@@ -1,0 +1,19 @@
+{% extends 'hana/main-display.html' %}
+{% block title %}
+Schedule | Your Schedule
+{% endblock title %}
+
+{% block head %}
+Schedule
+{% endblock head %}
+
+{% block data %}
+{% load thumbnail %}
+{% thumbnail "https://vhx.imgix.net/hillsongworship/assets/ca8e3862-bc01-4b8e-958a-7850b7c11faf-552951ec.jpg?auto=format%2Ccompress&fit=crop&h=720&w=1280" "300x300" crop="center" as im %}
+   <img src="{{ im.url }}">
+{% empty %}
+{% endthumbnail %}
+
+
+<p>displayed</p>
+{% endblock data %}

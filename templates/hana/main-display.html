@@ -1,38 +1,71 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <title>
-            Photos | Your Photos
+            {% block title %}
+            Your Data
+            {% endblock title %}
         </title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'hana/css/style.css' %}">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hana/css/base.css' %}" type="text/css">
+
+        <link rel="stylesheet" href="{% static 'hana/css/style.css' %}" type="text/css">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        
+
     </head>
     <body>
-        <nav id="nav">
+        <!----------------------top-bar----------------->
+        <div id="top">
             <div class="label">
-                <p>ISHMAEL</p>
-                <P>Schedule</P>
+                <p style="margin-right: 20px;">ISHMAEL</p>
+                <p>
+                {% block head %}
+                Photos
+                {% endblock head %}
+                </p>
             </div>
             <div class="search">
                 <input type="search" placeholder="Search Photos">
-                <div>
+                <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+                <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+            </div>
             <div class="right-side">
                 <div class="icons">
-                    <i></i>
+                    
                 </div>
                 <div class="profile">
                     <img src="https://lh3.googleusercontent.com/-Ibjuo3RZbeE/XntyjqtgINI/AAAAAAAAApw/LDHrXGRhVP48l8UEYnTFDg9_jV7-p1kmgCEwYBhgLKtQDAL1OcqyX_T6Z5rnn-rk2cKYi2B1LqymfKeoeRKvYQaDi1XJPV9l1oN3bE_1N_AKoPKxeJDKELHHDac1_jIa46EWFjHVZaGOh8ELUalxz6Q5TZ165XSUtviW5Rh1P6oS9fbfGhZcLIyIN8YSc9EhvjQmBWDbZUjsobqBNX04FrGFRRRLGP-oQ4tHS6jVTyzVmq_WJbbsaj-KL3x_-UXBf56qNSBPw179Dn7We4-cvzzkgX2PX0TDijnUjCV0ln3y7a9SJaetSJ5cZuK_EQW6rLgUNt1jOpmzUjRk853te5wEI7x1p23l56JZHwxza2Xi1HhUhMzpSrb_sKbRtI-W02pve44s5vFyCgIsAe2TAc_2kQpUgeHQFCXUXg7DEJ43aLg-uTpT9ES-Gr1oGapmVip0qo8fr-DFcQImTCWQgDFt3qh7XMoZw9lOTN6e6A-2REKIEXYCtououqpd4sXOLeEJ99ZxS5tt5cAMKRyOnA8R08BLQbeXSAdJEA0M5TTUzGXV13UyHwT7VGVnZBDuJ-lGJiNojlkWtJZUGXmpAfVg13Kn8kD4PaEpOsl7nRjxTYuwMTVqj90vnm1VhfKF_QqE-8-E4OAp5QsmVwpQFZCKsZDVRMMiU_PcF/w139-h140-p/IMG_20200118_164003.jpg">
                 </div>
             </div>
-        </nav>
+        </div>
+    <!--------------------------left-bar------------------->
         <aside id="aside">
             <ul>
-                <li><a>Schedule</a></li>
-                <li><a>Documents</a></li>
-                <li><a>My Journals</a></li>
-                <li><a>Photos</a></li>
-                <li><a>Videos</a></li>
+                <a href="{% url 'schedule' %}"><li><img src="https://img.icons8.com/fluent/48/000000/overtime.png"/></i>Schedule</li></a>
+                <a href="{% url 'documents' %}"><li><i class="fa fa-file-pdf-o fa-2x"></i>Documents</li></a>
+                <a href="{% url 'journals' %}"><li><img src="https://img.icons8.com/fluent/48/000000/journal.png"/></i>My Journals</li></a>
+                <a href="{% url 'photos' %}"><li><img src="https://img.icons8.com/fluent/48/000000/google-photos.png"/>Photos</li></a>
+                <a href="{% url 'videos' %}"><li><i class="fa fa-play-circle-o fa-2x"></i>Videos</li></a>
             </ul>
         </aside>
+        <!-------------------------------------------------->
+        {% block data %}
+
+        {% endblock data %}
+        
     </body>
 </html>
