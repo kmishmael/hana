@@ -18,8 +18,13 @@
     position: absolute;
     z-index: 10;
     display: inline-block;
-    left: 37%;
+    
     top: 5%;
+}
+@media screen and (max-width: 600px) {
+    .platform{
+        left: 0%;
+    }
 }
 .fa-times{
     vertical-align: top;

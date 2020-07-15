@@ -15,6 +15,7 @@
 
         <link rel="stylesheet" href="{% static 'hana/css/style.css' %}" type="text/css">
 
+        <link rel="stylesheet" href="{% static 'hana/css/media.css' %}" type="text/css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,11 +29,61 @@
 
     </head>
     <body>
+        <style>
+#icon{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10%;
+    
+} 
+#icon:hover{
+    cursor: pointer;
+
+}
+#lk:hover{
+               color: blue;
+           }
+
+        </style>
+        <!----------------side-nav--------->
+        <div id="side">
+          <div class="cancel">
+              <label for="check">
+                <i class="fa fa-times fa-2x" id="cancel"></i>
+              </label>
+          </div>
+          <div class="to">
+              <p>Ishmael</p>
+          </div>
+          <div class="content">
+              <ul>
+                <a href="{% url 'schedule' %}"><li><img src="https://img.icons8.com/fluent/48/000000/overtime.png"/></i>Schedule</li></a>
+                <a href="{% url 'documents' %}"><li><i class="fa fa-file-pdf-o fa-2x"></i>Documents</li></a>
+                <a href="{% url 'journals' %}"><li><img src="https://img.icons8.com/fluent/48/000000/journal.png"/></i>My Journals</li></a>
+                <a href="{% url 'photos' %}"><li><img src="https://img.icons8.com/fluent/48/000000/google-photos.png"/>Photos</li></a>
+                <a href="{% url 'videos' %}"><li><i class="fa fa-play-circle-o fa-2x"></i>Videos</li></a>
+              </ul>
+          </div>
+        </div>
         <!----------------------top-bar----------------->
+        <style>
+           #lk:hover{
+               color: blue;
+           }
+        </style>
         <div id="top">
+            
             <div class="label">
-                <p style="margin-right: 20px;">ISHMAEL</p>
-                <p>
+                <input type="checkbox" id="check" unchecked>
+                <label for="check" class="icon">
+                <i class="fa fa-bars fa-2x" id="icon"></i>
+                </label>
+                <p class="name"><a href="{% url 'home' %}" style="color: black;" id="lk">ISHMAEL</a></p>
+                <p class="app-label">
                 {% block head %}
                 Photos
                 {% endblock head %}
@@ -40,8 +91,8 @@
             </div>
             <div class="search">
                 <input type="search" placeholder="Search Photos">
-                <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
-                <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+                <button id="list"><i class="fa fa-bars"></i> List</button>
+                <button id="grid"><i class="fa fa-th-large"></i> Grid</button>
             </div>
             <div class="right-side">
                 <div class="icons">
@@ -66,6 +117,15 @@
         {% block data %}
 
         {% endblock data %}
-        
+        <script>
+            $(function(){
+                $("#icon").click(function(){
+                    $("#side").toggleClass("side");
+                });
+                $("#cancel").click(function(){
+                    $("#side").toggleClass("side");
+                });
+            });
+        </script>
     </body>
 </html>

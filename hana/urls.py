@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from hana import views
+from hana.views import login
 from social import views as sview
 from social.views import PlatformsListView, PlatformsDetailView, SocialListView
 from photos import urls
 
 from django.conf import settings
 from django.views.static import serve
+
+from hana import views, settings
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,11 +40,15 @@ urlpatterns = [
     path('videos/', include('videos.urls')),
     path('documents/', include('documents.urls')),
     path('schedule/', include('schedule.urls')),
+    path('login/', views.login, name='login'),
 ]
-
+'''
 if settings.DEBUG:
     urlpatterns += [
         url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         })
     ]
+'''
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

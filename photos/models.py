@@ -5,7 +5,7 @@ from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile, SimpleUploadedFile
 from resizeimage import resizeimage
 import urllib.request
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 
 # Create your models here.
 
@@ -25,9 +25,16 @@ def generate_thumbnail(image):
     new_thumbnail = File(t_io, name=image.name)
     return new_thumbnail
 
-#def stream_url(imageurl):
-    
-    
+def stream_url(stream_url):
+    basename = urlparse(stream_url)
+    #.path.split('/')[-1]dsd
+    try:
+        f_basename = parse_qs(basename.query)['id'][0] + ".jpeg"
+    except KeyError:
+        f_basename = basename.path.split('/')[-1]
+    tmpfile,_ = urllib.request.urlretrieve(stream_url, "image.jpeg") 
+    new_stream = SimpleUploadedFile(f_basename, open(tmpfile, "rb").read())
+    return new_stream
 class Image(models.Model):
     image_id = models.CharField(max_length=50, verbose_name='Id')
     name = models.CharField(max_length=100, verbose_name='Name')
@@ -37,6 +44,8 @@ class Image(models.Model):
     thumbnail = models.ImageField(upload_to='Thumbnails/photos/', blank=True, null=True)
     
     def save(self, *args, **kwargs):
+        new_stream = stream_url(self.imageurl)
+        self.image = new_stream
         new_image = compress(self.image)
         self.image = new_image
         new_thumbnail = generate_thumbnail(self.image)
@@ -44,5 +53,5 @@ class Image(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
-        return self.image_id
+        return self.name
     

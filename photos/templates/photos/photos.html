@@ -16,14 +16,19 @@ Photos
 
             <!-- Buttons to choose list or grid view -->
 <!----<i id="thumbimage" class="fa fa-image"></i>
-  -----------https://vhx.imgix.net/hillsongworship/assets/ca8e3862-bc01-4b8e-958a-7850b7c11faf-552951ec.jpg?auto=format%2Ccompress&fit=crop&h=720&w=1280-->
+  https://e-cdns-images.dzcdn.net/images/cover/f5abb59eb62779f57f806b1aec3b4314/500x500-000000-80-0-0.jpg
+  https://vhx.imgix.net/hillsongworship/assets/ca8e3862-bc01-4b8e-958a-7850b7c11faf-552951ec.jpg?auto=format%2Ccompress&fit=crop&h=720&w=1280-->
    
   <div class="column">
     <div class="card">
-      <img id="thumbnail" src="https://e-cdns-images.dzcdn.net/images/cover/f5abb59eb62779f57f806b1aec3b4314/500x500-000000-80-0-0.jpg">
-      <p>Test Label</p>
-    </div>
-    
+      <div class="thumb">
+        <img class="thumbnail" src="{{ image.thumbnail.url }}">
+      </div>
+      <div class="label-card">
+        <i id="thumbimage" class="fa fa-image"></i>
+        <p>{{ image.name }}</p>
+      </div> 
+    </div>   
   </div>
  
 
@@ -35,8 +40,125 @@ Photos
             <a href="{% static 'photos/csv/driveimages.csv' %}">No images yet</a>
            {% endif %}
                
-        </div>
+</div>
+<!-----------------------------list-->
+<div class="display-l">
+
+  {% if images %}
+   <div class="row-l">
+              {% for image in images %}
+  
+              <!-- Buttons to choose list or grid view -->
+  <!----<i id="thumbimage" class="fa fa-image"></i>
+    https://e-cdns-images.dzcdn.net/images/cover/f5abb59eb62779f57f806b1aec3b4314/500x500-000000-80-0-0.jpg
+    https://vhx.imgix.net/hillsongworship/assets/ca8e3862-bc01-4b8e-958a-7850b7c11faf-552951ec.jpg?auto=format%2Ccompress&fit=crop&h=720&w=1280-->
+     
+    <div class="column-l">
+      <div class="card-l">
+        
+          <img class="thumbnail-l" src="{{ image.thumbnail.url }}">
+      
+      
+          <i id="thumbimage" class="fa fa-image"></i>
+          <p>{{ image.name }}</p>
+      </div>   
+    </div>
+   
+  
+              {% endfor %}
+  </div>
+             {% else %}
+             {% load static %}
+              <img src="{% static 'hana/images/no-image.png' %}" class="e-image">
+              <a href="{% static 'photos/csv/driveimages.csv' %}">No images yet</a>
+             {% endif %}
+                 
+  </div>
+  <!------------------------->
 <style>
+  /****************************************
+.display{
+  display: none;
+}*/
+.display-l{
+ margin-top: 80px;
+ padding-left: 18%;
+ padding-right: 1%;
+ display: none;
+}
+.change{
+  display: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column-l {
+  width: 100%;
+  padding: 5px 10px;
+  height: 80px;
+}
+/*.column-g{
+  display: none;
+}*/
+.thumbnail-l{
+  border: none;
+  width: 70px;
+  height: 50px;
+  float: left;
+  margin-right: 20px;
+}
+.card-l i,p{
+  float: left;
+  padding-left: 20px;
+}
+.card-l:hover{
+  box-shadow: 0 4px 8px 0 rgba(11, 7, 233, 0.466)
+}
+.card-l p{
+  padding-top: 15px;
+}
+.card-l i{
+  padding-top: 15px;
+}
+/*  250x250 thumbnail Remove extra left and right margins, due to padding in columns */
+.row-l {
+  margin: 0 -5px;
+  margin-bottom: 5px;
+}
+/*.card-l:hover{
+  box-shadow: 0 4px 8px 0 rgba(11, 7, 233, 0.466)
+}
+/* Clear floats after the columns */
+.row-l:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the counter cards */
+.card-l {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  /*this adds the "card" effect */
+  text-align: center;
+  background-color: #f1f1f1;
+  height: 70px;
+  /*border-radius: 5%;*/
+  padding: 5px;
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#thumbimage-l{
+  color: red;
+}
+/* Responsive columns - one column layout (vertical) on small screens *
+
+  /********************************************************/
 * {
   box-sizing: border-box;
 }
@@ -52,26 +174,41 @@ body {
   padding: 5px 10px;
 
 }
-#thumbnail{
-  height: 90%;
+.thumbnail{
   border: none;
+  width: 100%;
+}
+.thumbnail-list{
+  border: none !important;
+  width: 20% !important;
+}
+.thumb{
+  width: 100%;
+  height: 195px;
   overflow: hidden;
 }
-
 /*  250x250 thumbnail Remove extra left and right margins, due to padding in columns */
 .row {
-    margin: 0 -5px;
-    margin-bottom: 5px;
+  margin: 0 -5px;
+  margin-bottom: 5px;
 }
-
+.label-card *{
+  display: inline;
+}
+.label-card i{
+  margin-right: 5px;
+}
+.label-card p{
+  margin-top: 9px;
+}
+.card:hover{
+  box-shadow: 0 4px 8px 0 rgba(11, 7, 233, 0.466)
+}
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
-.card-line{
-    margin-top: 0px;
 }
 /* Style the counter cards */
 .card {
@@ -83,36 +220,31 @@ body {
   padding: 5px;
 }
 
+#thumbimage{
+  color: red;
+}
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
-    width: 100%;
+    width: 50%;
     margin-bottom: 20px;
     float: left;
-  }
+
 }
 </style>
 
 <script>
-// Get the elements with class="column"
-var elements = document.getElementsByClassName("column");
 
-// Declare a loop variable
-var i;
-
-// List View
-function listView() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.width = "100%";
-  }
-}
-
-// Grid View
-function gridView() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.width = "25%";
-  }
-}
+$(function(){
+  $("#list").click(function(){
+    $(".display").css("display", "none");
+    $(".display-l").css("display", "block");
+  });
+  $("#grid").click(function(){
+    $(".display").css("display", "block");
+    $(".display-l").css("display", "none");
+  });
+});
 
 </script>
 {% endblock data %}

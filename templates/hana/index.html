@@ -37,11 +37,11 @@
     <!---------------------top menu---------------->
     <div class="top-menu">
         <ul>
-            <li class="mb-4"><a href="#" id="tclick">MyJournals</a></li>
-            <li class="mb-4"><a href="#">Schedule</a></li>
-            <li class="mb-4"><a href="#">Documents</a></li>
-            <li class="mb-4"><a href="#">Photos</a></li>
-            <li class="mb-4"><a href="#">Videos</a></li>
+            <li class="mb-4"><a href="{% url 'journals' %}" id="tclick">MyJournals</a></li>
+            <li class="mb-4"><a href="{% url 'schedule' %}">Schedule</a></li>
+            <li class="mb-4"><a href="{% url 'documents' %}">Documents</a></li>
+            <li class="mb-4"><a href="{% url 'photos' %}">Photos</a></li>
+            <li class="mb-4"><a href="{% url 'videos' %}">Videos</a></li>
         </ul>
     </div>
 

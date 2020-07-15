@@ -3,21 +3,22 @@ from django.views import generic
 from social.models import Platforms
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
-class PlatformsListView(ListView):
+class PlatformsListView(LoginRequiredMixin, ListView):
     model = Platforms
     context_object_name = 'platforms'
     #queryset = Platforms.objects.order_by().values('f_class','s_name').distinct()
     template_name = 'hana/index.html'
     
     
-class PlatformsDetailView(DetailView):
+class PlatformsDetailView(LoginRequiredMixin, DetailView):
     model = Platforms
     template_name = 'social/platform-detail.html'
 
-class SocialListView(ListView):
+class SocialListView(LoginRequiredMixin, ListView):
     model = Platforms
     context_object_name = 'platforms'
     template_name = 'social/main-social.html'

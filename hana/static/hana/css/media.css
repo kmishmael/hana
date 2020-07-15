@@ -1,0 +1,116 @@
+/*************media responsive events ********************/
+#check{
+    display: none;
+}
+.icon{
+    float: left;
+}
+#side{
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    z-index: 500000;
+    background-color: rgb(26, 24, 24);
+}
+.cancel{
+    width: 100%;
+    text-align: right;
+    height: 50px;
+}
+.to p{
+    color: white;
+    font-size: 30px;
+}
+.to{
+    text-align: center;
+    height: 50px;
+}
+.content{
+    width: 100%;
+}
+.content ul a li{
+    color: white;
+    margin-left: -40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 22px;
+}
+
+.content ul a li:hover{
+    padding-left: 10px;
+    transition-duration: 0.5s;
+    color: #1ED760;
+}
+.content ul a li i{
+    margin-right: 25px;
+    margin-left: 10px;
+}
+.content ul a li img{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.content ul{
+    width: 100%;
+    left: 0;
+}
+.side{
+    transition: 0.5s;
+    left: 0 !important;
+   
+}
+
+@media screen and (min-width: 992px) {
+    #icon{
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+#icon{
+    display: none;
+}
+
+.search{
+    margin-top: 25px;
+}
+input[type=search]{
+    width: 150px;
+}
+.name{
+    margin-right: 0;
+}
+.app-label{
+    margin-left: 10px;
+}
+.profile{
+    margin-left: 10px;
+}
+}
+
+@media screen and (max-width: 600px){
+    #aside{
+        display: none;
+    }
+    #icon{
+        display: block;
+    }
+    input[type=search]{
+        display: none;
+    }
+    .name{
+        display: none;
+    }
+    .app-label{
+        top: 0;
+    }
+    .search{
+        margin-top: 25px;
+    }
+    .display{
+        margin-left: 0px;
+        
+    }
+    
+}

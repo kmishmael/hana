@@ -49,6 +49,36 @@ a{
 #middle *{
     display: block;
 }
+@media screen and (max-width: 600px){
+    .top-menu{
+        margin-left: 0;
+        height: 300px;
+    }
+    #middle{
+        margin-top: 70%;
+    }
+    .top-menu ul li{
+        display: block;
+    }
+    .top-menu ul{
+        display: block;
+    }
+    #social-icons{
+        border: 1px solid red;
+        position: absolute;
+        z-index: 1;
+        width: 94%;
+        margin-top: 40% !important;
+        text-align: center;
+        margin-left: 0 !important;
+        display: inline-block !important;
+    }
+    #social-icons ul li{
+        display: inline !important;
+        padding-bottom: 10px !important;
+    }
+}
+
 #social-icons{
     position: absolute;
     z-index: 1;
@@ -65,6 +95,7 @@ a{
 #social-icons ul li a{
     color: white;
     float: center;
+    cursor: pointer;
 }
 .fa-facebook{
   color: #3b5998;
@@ -122,8 +153,7 @@ a{
     background-color: rgb(26, 24, 24);
     height: 250px;
     border-radius: 5px;
-    transition: ease-in;
-    transition-duration: 0.5s;
+    transition-duration: 1s;
 
 }
 .profile{
@@ -230,20 +260,7 @@ label #cancel:hover{
     -moz-animation-name: rot;
     -webkit-animation-name: 0.5s;
     transform: rotate(90deg) !important;
-}/*
-.roll-r{
-    animation-name: rot;
-    animation-duration: 0.5s;
-    transform-origin: center;
-    animation-direction: reverse;
-    -webkit-transform-origin: center;
-    -moz-transform-origin: center;
-    -moz-animation-duration: 0.5s;
-    -webkit-animation-name: rot;
-    -moz-animation-name: rot;
-    -webkit-animation-name: 0.5s;
-    transform: rotate(0deg) !important;
-}*/
+}
 
 @keyframes rot{
     0%{transform: rotate(0deg);}
