@@ -1,8 +1,1 @@
-Django==3.0.7
-pandas==1.0.5
-sqlparse==0.3.1
-python-memcached==1.59
-python-resize-image==1.1.19
-requests==2.24.0
-urllib3==1.25.9
-Pillow==7.2.0
+
