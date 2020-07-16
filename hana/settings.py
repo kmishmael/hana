@@ -28,8 +28,8 @@ SECRET_KEY = 'e(n#=h_@^@%+o$v=n)#s-2fu-m-2yfl8mab@62e_x5m2m0jgzk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 THUMBNAIL_DEBUG = True
 # Application definition
@@ -58,9 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'hana.urls'
 
 TEMPLATES = [
@@ -92,7 +91,7 @@ WSGI_APPLICATION = 'hana.wsgi.application'
 STATIC_ROOT = os.path.dirname('static')
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -109,10 +108,10 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     }
-}
+}'''
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+#db_from_env = dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -157,11 +156,11 @@ LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = '/home/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'hana/static/'),]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'hana/static/'),]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
