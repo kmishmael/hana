@@ -1,0 +1,131 @@
+{% extends 'social/social.html' %}
+
+{% block title %}
+   User | Login to account
+{% endblock title %}
+{% block content %}
+
+<div class="canvas">
+        <div class="platform">
+         
+           <div class="p-top">
+               <div class="p-platop">
+                    <img id="profile" src="https://lh3.googleusercontent.com/-Ibjuo3RZbeE/XntyjqtgINI/AAAAAAAAApw/LDHrXGRhVP48l8UEYnTFDg9_jV7-p1kmgCEwYBhgLKtQDAL1OcqyX_T6Z5rnn-rk2cKYi2B1LqymfKeoeRKvYQaDi1XJPV9l1oN3bE_1N_AKoPKxeJDKELHHDac1_jIa46EWFjHVZaGOh8ELUalxz6Q5TZ165XSUtviW5Rh1P6oS9fbfGhZcLIyIN8YSc9EhvjQmBWDbZUjsobqBNX04FrGFRRRLGP-oQ4tHS6jVTyzVmq_WJbbsaj-KL3x_-UXBf56qNSBPw179Dn7We4-cvzzkgX2PX0TDijnUjCV0ln3y7a9SJaetSJ5cZuK_EQW6rLgUNt1jOpmzUjRk853te5wEI7x1p23l56JZHwxza2Xi1HhUhMzpSrb_sKbRtI-W02pve44s5vFyCgIsAe2TAc_2kQpUgeHQFCXUXg7DEJ43aLg-uTpT9ES-Gr1oGapmVip0qo8fr-DFcQImTCWQgDFt3qh7XMoZw9lOTN6e6A-2REKIEXYCtououqpd4sXOLeEJ99ZxS5tt5cAMKRyOnA8R08BLQbeXSAdJEA0M5TTUzGXV13UyHwT7VGVnZBDuJ-lGJiNojlkWtJZUGXmpAfVg13Kn8kD4PaEpOsl7nRjxTYuwMTVqj90vnm1VhfKF_QqE-8-E4OAp5QsmVwpQFZCKsZDVRMMiU_PcF/w139-h140-p/IMG_20200118_164003.jpg">
+               </div> 
+               <div class="p-cancel">
+                   <a href="">
+                    <i class="fa fa-times" id="canc"></i>
+                    <a>
+                </div>
+           </div>
+           <div class="p-title">
+               <p class="plat {{ platforms.f_class }}-s">
+                kibet ishmael
+               </p>
+               <p class="have">
+                   Welcome back.
+               </p>
+           </div>
+           <form method="post" name="login">
+           <div class="form">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <!--<div class="p-content">
+               <div class="p-email">
+                   <p class="align-p">Email:</p>
+                   <input type="email" name="email" placeholder="Your Email">
+               </div>
+               <div class="p-name">
+                <p class="align-p">Password:</p>
+                <input type="password" placeholder="Your Password" name="password">
+               </div>
+           
+              <div class="p-submit">
+               -->
+               <div class="s-btn">
+                <button type="submit" id="submit">Login</button>
+                </div>
+                 <div class="p-protocol">
+                   <a id="prot" href="{% url 'register' %}">Register</a>
+               </div>
+               </div>
+              
+
+        </form>
+        </div> 
+</div>
+        <script>
+       function pasuser(form) {
+           if (form.email.value=="kmishmael@gmail.com") { 
+               if (form.password.value=="Kibet189") {
+                   alert("corrrect");
+                   //location="{% url 'home' %}"
+                   } else {
+                       alert("Invalid Password")
+                       }
+                       } else {  alert("Invalid UserID")
+                       }
+       }
+        </script>
+        <style>
+        .platform{
+            margin-left: -14%;
+        }
+        @media screen and (max-width: 600px) {
+            .platform{
+                margin-left: 8%;
+            }
+        }
+        #profile{
+            border-radius: 50%;
+            border: 4px solid rgb(100, 69, 11);
+        }
+        .s-btn{
+            text-align: right;
+        }
+        .s-btn button{
+            margin-right: 60px;
+
+        }
+        .form{
+            padding-top: 40px;
+            color: white;
+        }
+        input{
+            width: 200px;
+        }
+        #submit{
+            width: 100px;
+            height: 40px;
+            font-size: 18px;
+        }
+        .p-submit{
+            text-align: right;
+        }
+        #submit:hover{
+            color: white;
+            background-color: #1ED760;
+        }
+        .p-protocol{
+            margin-top: 40px;
+            text-align: right;
+            padding-right: 20px;
+        }
+        #prot{
+            font-size: 14px;
+            margin-right: 20px;
+            color: #1ED760;
+        }
+        #prot:hover{
+            color: white;
+        }
+        .canvas{
+            width: 100vw;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            position: absolute;
+            text-align: center !important;
+        }
+        </style>
+{% endblock content %}

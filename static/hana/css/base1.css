@@ -1,0 +1,245 @@
+li{
+    list-style: none;
+}
+.top-menu ul{
+    float: right;
+    align-self: right;
+}
+.top-menu ul li{
+    list-style: none;
+    font-size: 22px;
+    margin-left: 20px;
+    justify-self: right;
+    float: left;
+    }
+.top-menu{
+    position: absolute;
+    z-index: 3;
+    float: right;
+    justify-self: right;
+    margin-left: 40%;
+    margin-top: 5px;
+}
+.top-menu ul li a{
+    color: white;
+    text-transform: uppercase;
+}
+.top-menu ul li a:hover, a:active{
+    color: orange;
+    text-decoration: none;
+
+}
+a{
+    text-decoration: none;
+}
+#middle{
+    position: absolute;
+    z-index: 1;
+    color: white;
+    /*border: 2px solid white;*/
+    margin-top: 20%;
+   /* left: 35%;*/
+    text-transform: uppercase;
+    width: 94%;
+    text-align: center;
+}
+#middle *{
+    display: block;
+}
+
+.fa-facebook{
+  color: #3b5998;
+  
+}
+.fa-instagram{
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.fa-twitter{
+    color: #00aced;
+}
+.fa-google{
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+   -webkit-text-fill-color: transparent;
+}
+.fa-youtube-play{
+    color: #bb0000;
+}
+.fa-linkedin{
+    color: #007bb6;
+}
+.fa-windows{
+    color: blue;
+}
+.fa-spotify{
+    color: #1ED760;
+}
+.fa-wordpress{
+    color: #21759b ;
+    background-color: white;
+    border-radius: 50%;
+}
+.fa-whatsapp{
+    color:#fff linear-gradient(#25d366,#25d366)10px 84%/10px 15px no-repeat, radial-gradient(#25d366 60%,transparent 0);
+}
+.fa-github{
+    color: #000000;
+    background-color: white;
+}
+.pop-out{
+    position: absolute;
+    right: 60px;
+    top: 25px;
+    z-index: 3;
+    width: 250px;
+    background-color: rgb(26, 24, 24);
+    height: 300px;
+    border-radius: 5px;
+
+}
+.profile{
+    width: 250px;
+    align-content: center;
+    text-align: center;
+}
+.profile-image{
+    justify-self: center;
+
+}
+.pop-out-name{
+    text-align: center;
+}
+.pop-out-email{
+    text-align: center;
+}
+.date{
+    color: white;
+}
+.time{
+    color: white;
+}
+.pop-out-date{
+    text-align: center;
+}
+.menu-icon{
+    position: absolute;
+    z-index: 3;
+    height: 100px;
+    width: 70px;
+}
+   /* border: 1px solid white;*
+    right: 0;
+    margin-top: 2px;
+}
+.menu-icon i{
+    background: -webkit-linear-gradient(#ea4335, #4285f4, #34a853, #fbbc05);
+    background: linear-gradient(#ea4335, #4285f4, #34a853, #fbbc05);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: none;
+    /*
+    border: 3px solid white;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    padding: 15px;
+    display: none;*
+}
+.menu-icon i:hover{
+    background: white;
+    color: black;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+}
+.b-pop-menu{
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    right: 0;
+    margin-right: 20px;
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+}
+.b-pop-menu i{
+    color: white;
+    padding-top: 10px;
+}
+.pop-animate{
+    animation-name: pop-rotate;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    transform-origin: center;
+    transform: rotate(90deg);
+    justify-self: center;
+}
+.pop-animate2{
+    animation-name: pop-rotate;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+    transform-origin: center;
+    transform: rotate(0deg);
+}
+.b-pop-menu:hover{
+    background-color: rgb(133, 123, 123);
+    transition: ease-in;
+    transition-duration: 1s;
+}
+@keyframes pop-rotate{
+    0%{transform: rotate(1deg);}
+    10%{transform: rotate(8deg);}
+    20%{transform: rotate(16deg);}
+    30%{transform: rotate(24deg);}
+    40%{transform: rotate(32deg);}
+    50%{transform: rotate(40deg);}
+    60%{transform: rotate(48deg);}
+    70%{transform: rotate(54deg);}
+    80%{transform: rotate(63deg);}
+    90%{transform: rotate(81deg);}
+    100%{transform: rotate(90deg);}
+}
+/********************************************************************/
+
+#check{
+    display: none;
+}
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 17px;
+    font-size: 20px;
+    color: white;
+    padding: 6px 12px;
+    transition: all 0.5s;
+}
+label #cancel{
+    left: -195px;
+    top: 17px;
+    font-size: 20px;
+    color: white;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+}
+input[type=checkbox]:checked + div.popout{
+    right: 400px;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 195px;
+}
