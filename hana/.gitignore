@@ -1,6 +1,0 @@
-*.pyc
-*~
-/.vscode
-db.sqlite3
-venv
-__pycache__
