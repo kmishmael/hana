@@ -2,7 +2,7 @@ Pillow==7.2.0
 python-resize-image==1.1.19
 requests==2.24.0
 sqlparse==0.3.1
-Django==3.0.7
+Django==3.0.14
 dj-database-url==0.5.0
 decorator==4.4.2
 urllib3==1.25.9
